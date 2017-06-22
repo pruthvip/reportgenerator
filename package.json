@@ -6,6 +6,7 @@
 "scripts": {
   "build": "webpack",
   "dev": "webpack -w",
+  "gh": "webpack --env gh",
    "lint": "eslint . && scss-lint"
 },
 "author": "Pruthvi P <pruthvip15@gmail.com>",
