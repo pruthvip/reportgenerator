@@ -18,7 +18,7 @@ function getOutputFilesConfig() {
     if (config.ENV === 'production') {
         filename = '[name].[hash].js';
         if (config.isGhPageTrue) {
-          filename = `${config.repoName}/[name].[hash].js`;
+          filename = `[name].[hash].js`;
           path = config.path.dist;
           publicPath = '';
         }
