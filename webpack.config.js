@@ -12,14 +12,23 @@ const config = require('./build-config');
 function getOutputFilesConfig() {
     let filename = '[name].js';
 
+    let path = config.path.dist + '/bundles';
+    let publicPath = '/bundles';
+
     if (config.ENV === 'production') {
         filename = '[name].[hash].js';
+        if (config.isGhPageTrue) {
+          filename = `${config.repoName}/[name].[hash].js`;
+          path = config.path.dist;
+          publicPath = '';
+        }
+
     }
 
     return {
         filename: filename,
-        path: config.path.dist + '/bundles',
-        publicPath: '/bundles'
+        path: path,
+        publicPath: publicPath
     };
 }
 
